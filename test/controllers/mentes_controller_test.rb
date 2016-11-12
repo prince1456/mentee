@@ -17,7 +17,7 @@ class MentesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create mente" do
     assert_difference('Mente.count') do
-      post mentes_url, params: { mente: { age: @mente.age, description: @mente.description, email: @mente.email, interests: @mente.interests, langitude: @mente.langitude, latitude: @mente.latitude, location: @mente.location, mentor_type: @mente.mentor_type, name: @mente.name, question: @mente.question } }
+      post mentes_url, params: { mente: { age: @mente.age, description: @mente.description, email: @mente.email, image: @mente.image, interests: @mente.interests, langitude: @mente.langitude, latitude: @mente.latitude, location: @mente.location, mentor_type: @mente.mentor_type, name: @mente.name, question: @mente.question } }
     end
 
     assert_redirected_to mente_url(Mente.last)
@@ -34,7 +34,7 @@ class MentesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update mente" do
-    patch mente_url(@mente), params: { mente: { age: @mente.age, description: @mente.description, email: @mente.email, interests: @mente.interests, langitude: @mente.langitude, latitude: @mente.latitude, location: @mente.location, mentor_type: @mente.mentor_type, name: @mente.name, question: @mente.question } }
+    patch mente_url(@mente), params: { mente: { age: @mente.age, description: @mente.description, email: @mente.email, image: @mente.image, interests: @mente.interests, langitude: @mente.langitude, latitude: @mente.latitude, location: @mente.location, mentor_type: @mente.mentor_type, name: @mente.name, question: @mente.question } }
     assert_redirected_to mente_url(@mente)
   end
 

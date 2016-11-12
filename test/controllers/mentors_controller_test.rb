@@ -17,7 +17,7 @@ class MentorsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create mentor" do
     assert_difference('Mentor.count') do
-      post mentors_url, params: { mentor: { age: @mentor.age, description: @mentor.description, email: @mentor.email, interests: @mentor.interests, langitude: @mentor.langitude, latitude: @mentor.latitude, location: @mentor.location, mentor_type: @mentor.mentor_type, name: @mentor.name, question: @mentor.question } }
+      post mentors_url, params: { mentor: { age: @mentor.age, description: @mentor.description, email: @mentor.email, image: @mentor.image, interests: @mentor.interests, langitude: @mentor.langitude, latitude: @mentor.latitude, location: @mentor.location, mentor_type: @mentor.mentor_type, name: @mentor.name, question: @mentor.question } }
     end
 
     assert_redirected_to mentor_url(Mentor.last)
@@ -34,7 +34,7 @@ class MentorsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update mentor" do
-    patch mentor_url(@mentor), params: { mentor: { age: @mentor.age, description: @mentor.description, email: @mentor.email, interests: @mentor.interests, langitude: @mentor.langitude, latitude: @mentor.latitude, location: @mentor.location, mentor_type: @mentor.mentor_type, name: @mentor.name, question: @mentor.question } }
+    patch mentor_url(@mentor), params: { mentor: { age: @mentor.age, description: @mentor.description, email: @mentor.email, image: @mentor.image, interests: @mentor.interests, langitude: @mentor.langitude, latitude: @mentor.latitude, location: @mentor.location, mentor_type: @mentor.mentor_type, name: @mentor.name, question: @mentor.question } }
     assert_redirected_to mentor_url(@mentor)
   end
 
