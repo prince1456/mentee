@@ -1,0 +1,1 @@
+json.partial! "mentes/mente", mente: @mente

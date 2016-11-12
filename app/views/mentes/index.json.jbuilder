@@ -1,0 +1,1 @@
+json.array! @mentes, partial: 'mentes/mente', as: :mente

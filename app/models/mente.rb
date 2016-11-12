@@ -1,0 +1,2 @@
+class Mente < ApplicationRecord
+end
