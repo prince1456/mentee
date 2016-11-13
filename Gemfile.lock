@@ -1,5 +1,5 @@
 GEM
-  remote: https://rubygems.org/
+  remote: http://rubygems.org/
   specs:
     CFPropertyList (2.3.3)
     actioncable (5.0.0.1)
@@ -64,6 +64,7 @@ GEM
     excon (0.54.0)
     execjs (2.7.0)
     ffi (1.9.14)
+    ffi (1.9.14-x86-mingw32)
     fission (0.5.0)
       CFPropertyList (~> 2.2)
     fog (1.38.0)
@@ -223,7 +224,10 @@ GEM
     nio4r (1.2.1)
     nokogiri (1.6.8.1)
       mini_portile2 (~> 2.1.0)
+    nokogiri (1.6.8.1-x86-mingw32)
+      mini_portile2 (~> 2.1.0)
     pg (0.19.0)
+    pg (0.19.0-x86-mingw32)
     puma (3.6.0)
     rack (2.0.1)
     rack-test (0.6.3)
@@ -291,6 +295,8 @@ GEM
     turbolinks-source (5.0.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
+    tzinfo-data (1.2016.9)
+      tzinfo (>= 1.0.0)
     uglifier (3.0.3)
       execjs (>= 0.3.0, < 3)
     web-console (3.4.0)
@@ -305,6 +311,7 @@ GEM
 
 PLATFORMS
   ruby
+  x86-mingw32
 
 DEPENDENCIES
   bootstrap-sass (~> 3.3.6)

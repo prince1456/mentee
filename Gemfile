@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 gem 'fog'
 gem 'carrierwave', '>= 1.0.0.rc', '< 2.0'
