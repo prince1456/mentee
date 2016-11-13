@@ -1,6 +1,7 @@
-class CreateMentes < ActiveRecord::Migration[5.0]
+class CreateMentors < ActiveRecord::Migration[5.0]
   def change
-    create_table :mentes do |t|
+    create_table :mentors do |t|
+      t.string :image
       t.string :email
       t.string :name
       t.date :age

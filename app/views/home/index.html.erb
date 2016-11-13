@@ -1,2 +1,48 @@
-<%= link_to 'Mentors', new_mentor_path, class:"btn btn-secondary" %>
-<%= link_to 'Mentee', new_mente_path, class:"btn btn-secondary" %>
+<div class="home-page">
+	<div class="container">
+		<!-- Mentor help modal -->
+		<div class="modal fade" id="mentor-modal" role="dialog">
+		    <div class="modal-dialog">
+		        <div class="modal-content">
+		            <div class="modal-header">
+		                <button type="button" class="close" data-dismiss="modal">&times;</button>
+		                <h2 class="modal-title">Mentors</h2>
+		            </div>
+
+		            <div class="modal-body">
+		                <p>We do blah blah blah.</p>
+		            </div>
+		            <div class="modal-footer">
+		                <input type="button" data-dismiss="modal" value="CLOSE" class="modal-close-button"/>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+
+		<!-- Mentor help modal -->
+		<div class="modal fade" id="mentee-modal" role="dialog">
+		    <div class="modal-dialog">
+		        <div class="modal-content">
+		            <div class="modal-header">
+		                <button type="button" class="close" data-dismiss="modal">&times;</button>
+		                <h2 class="modal-title">Mentees</h2>
+		            </div>
+
+		            <div class="modal-body">
+		                <p>You do blah blah blah.</p>
+		            </div>
+		            <div class="modal-footer">
+		                <input type="button" data-dismiss="modal" value="CLOSE" class="modal-close-button"/>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+		<%= link_to 'Mentors', new_mentor_path, class:"home-btn" %>
+		<%= link_to 'Mentee', new_mente_path, class:"home-btn" %>
+	</div>
+
+	<div class="home-footer">
+		<p data-toggle="modal" data-target="#mentor-modal">What is a mentor?</a>
+		<p data-toggle="modal" data-target="#mentee-modal">What is a mentee?</a>
+	</div>
+</div>

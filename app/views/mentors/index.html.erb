@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Image</th>
       <th>Email</th>
       <th>Name</th>
       <th>Age</th>
@@ -22,6 +23,7 @@
   <tbody>
     <% @mentors.each do |mentor| %>
       <tr>
+        <td><%= mentor.image %></td>
         <td><%= mentor.email %></td>
         <td><%= mentor.name %></td>
         <td><%= mentor.age %></td>
