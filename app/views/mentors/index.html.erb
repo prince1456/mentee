@@ -14,14 +14,14 @@
   <br>
 
 <div align="center table-responsive">
-  <table class="table table-borderless table-condensed">
+  <table class="table table-borderless">
 
     <tbody>
     <% @mentors.each do |mentor| %>
         <tr>
           <td rowspan="2">
             <!--image-->
-           <%=image_tag mentor.image, class: "img-circle img-responsive"  %>
+           <%=image_tag mentor.image, class: "img-circle"  %>
           </td>
         </tr>
         <tr>
@@ -32,7 +32,7 @@
                 </tr>
               <tr>
                 <!--Location-->
-                <td colspan="4" class="info p-info"> <%= mentor.location %></td>
+                <td colspan="4" style="color: #fff;"> <%= mentor.location %></td>
               </tr>
               <tr>
                 <!--Description-->
