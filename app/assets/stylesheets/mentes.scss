@@ -1,3 +1,98 @@
 // Place all the styles related to the mentes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$pink-colour: #f9dcd6;
+$darkPurple-colour: #393b50;
+$red-colour: #d6757a;
+$grey-colour: #A9A9A9;
+
+.mentee-form-page {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: $darkPurple-colour;
+}
+
+.mentee-form-page .container{
+	width: 80%;
+}
+
+.mentee-form-page h1 {
+	font-size: 24px;
+	color: $pink-colour;
+	text-align: center;
+}
+
+.mentee-form-page hr {
+	color: $pink-colour;
+    width: 70%;
+    margin: 15px 15%;
+    height: 10px;
+}
+
+.mentee-form-page label {
+	text-align: left;
+	width: 100%;
+	color: $pink-colour;
+	font-weight: 400;
+	margin-top: 10px;
+}
+
+.mentee-form-page input {
+	width: 100%;
+	background: white;
+	margin-bottom: 10px; 
+	height: 35px;
+	border: none;
+	padding-left: 10px;
+	-webkit-border-radius: 5px;
+  	-moz-border-radius: 5px;
+  	border-radius: 5px;
+}
+
+.mentee-form-page input::-webkit-input-placeholder, .mentee-form-page textarea::-webkit-input-placeholder {
+  color: $pink-colour;
+}
+.mentee-form-page input::-moz-placeholder, .mentee-form-page textarea::-moz-input-placeholder {
+  color: $pink-colour;
+}
+.mentee-form-page input:-ms-input-placeholder, .mentee-form-page textarea:-ms-input-placeholder {
+  color: $pink-colour;
+}
+.mentee-form-page input:-moz-placeholder, .mentee-form-page textarea:-moz-input-placeholder {
+  color: $pink-colour;
+}
+
+.mentee-form-page input:hover, .mentee-form-page input:focus, .mentee-form-page input:active {
+	outline: none;
+}
+
+.mentee-form-page textarea  {
+	width: 100%;
+	background: white;
+	height: 150px !important;
+	padding: 5px;
+	-webkit-border-radius: 5px;
+  	-moz-border-radius: 5px;
+  	border-radius: 5px;
+  	resize: none;
+  	color: $pink-colour;
+}
+
+.mentee-form-page textarea:focus, .mentee-form-page textarea:active, .mentee-form-page textarea:hover   {
+	outline: none;
+}
+
+.submit-btn {
+	height: 50px!important;
+	width: 100%!important;
+	background: $red-colour!important;
+	color: white !important;
+    margin-top: 50px;
+}
+
+.submit-btn:hover, .submit-btn:active, .submit-btn:focus {
+	text-decoration: none;
+	color: white;
+	background: $red-colour;
+}
