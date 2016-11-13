@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161113020116) do
+ActiveRecord::Schema.define(version: 20161113203402) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "likes", force: :cascade do |t|
+    t.integer  "mentor_id"
+    t.integer  "mente_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["mente_id"], name: "index_likes_on_mente_id", using: :btree
+    t.index ["mentor_id"], name: "index_likes_on_mentor_id", using: :btree
+  end
 
   create_table "mentes", force: :cascade do |t|
     t.string   "image"
@@ -27,8 +36,10 @@ ActiveRecord::Schema.define(version: 20161113020116) do
     t.string   "location"
     t.string   "langitude"
     t.string   "latitude"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "password_digest"
+    t.float    "longitude"
   end
 
   create_table "mentors", force: :cascade do |t|
@@ -43,10 +54,13 @@ ActiveRecord::Schema.define(version: 20161113020116) do
     t.string   "location"
     t.string   "langitude"
     t.string   "latitude"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.float    "longitute"
     t.float    "longitude"
+    t.string   "password_digest"
   end
 
+  add_foreign_key "likes", "mentes"
+  add_foreign_key "likes", "mentors"
 end

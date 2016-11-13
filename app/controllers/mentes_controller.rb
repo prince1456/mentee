@@ -28,7 +28,7 @@ class MentesController < ApplicationController
 
     respond_to do |format|
       if @mente.save
-        format.html { redirect_to @mente, notice: 'Mente was successfully created.' }
+        format.html { redirect_to mentors_path, notice: 'Mente was successfully created.' }
         format.json { render :show, status: :created, location: @mente }
       else
         format.html { render :new }
@@ -69,6 +69,6 @@ class MentesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def mente_params
-      params.require(:mente).permit(:image, :email, :name, :age, :mentor_type, :description, :question, :interests, :location, :longitude, :latitude)
+      params.require(:mente).permit(:image, :email, :password, :name, :age, :mentor_type, :description, :question, :interests, :location, :longitude, :latitude)
     end
 end

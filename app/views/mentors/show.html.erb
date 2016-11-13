@@ -55,5 +55,11 @@
   <%= @mentor.latitude %>
 </p>
 
+<% if @like.present? && @like.persisted? %>
+  <%= link_to "Un-Like", mentor_like_path(@mentor, @like), method: :delete %>
+<% else %>
+  <%= link_to "Like", mentor_likes_path(@mentor), method: :post %>
+<% end %>
+
 <%= link_to 'Edit', edit_mentor_path(@mentor) %> |
 <%= link_to 'Back', mentors_path %>
