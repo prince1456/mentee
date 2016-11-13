@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'fog'
+gem 'geocoder'
 gem 'carrierwave', '>= 1.0.0.rc', '< 2.0'
 gem "mini_magick"
 gem 'simple_form'
