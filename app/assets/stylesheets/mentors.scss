@@ -1,3 +1,80 @@
 // Place all the styles related to the mentors controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+// Place all the styles related to the mentors controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+$pink-colour: #f9dcd6;
+$darkPurple-colour: #393b50;
+$red-colour: #d6757a;
+$grey-colour: #A9A9A9;
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+
+.mentor-list-page {
+	margin: 0;
+	padding: 0;
+	background-color: $darkPurple-colour;
+	width: 100%;
+	clear: both;
+	align: center;
+}
+
+.mentor-list-container{
+	width: 80%;
+	align: center;
+}
+
+.mentor-list-page h1{
+	font-size: 24px;
+	color: $pink-colour;
+	text-align: center;
+	font-weight: bold;
+	font-family: Open Sans, sans-serif;
+}
+
+.mentor-list-page h2{
+	font-size: 10px;
+	font-family: Open Sans, sans-serif;
+	color: #fff;
+    text-align: center;
+    font-size: 12px;
+}
+
+.table tbody tr > td {
+  &.success { background-color: $darkPurple-colour; }
+  &.info { background-color: $darkPurple-colour; }
+}
+
+a:link, a:visited {
+	color: $red-colour;
+	font-weight: bold;
+	font-size: 13px;
+	text-align: left;
+	text-decoration: underline;
+}
+
+a:link:active, a:visited:active{
+	color:$red-colour;
+	background-color: transparent;
+}
+
+.mentor-list-desc{
+	text-align: left;
+	color: #fff;
+	font-family: Open Sans, sans-serif;
+	font-size: 12px;
+	overflow: hidden;
+	max-width: 45ch;
+	background: $darkPurple-colour;
+}
+
+.table-borderless td,
+.table-borderless th,
+.table-borderless tr, {
+    border: 0;
+}
+
+.p-info{
+	color: #fff;
+}
