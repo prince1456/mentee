@@ -1,3 +1,4 @@
+<div class="container">
 <%= simple_form_for(@mente) do |f| %>
   <%= f.error_notification %>
 
@@ -5,17 +6,16 @@
     <%= f.input :image %>
     <%= f.input :email %>
     <%= f.input :name %>
-    <%= f.input :age %>
-    <%= f.input :mentor_type %>
+    <%= f.input :age, collection: 15..35, prompt: "Select your age", selected: 15%>
+    <%= f.input :mentor_type, priority: "Education", collection: [ "Life Coach", "Career Couch", "Entrepreneurship","Parenthood and Marriage", "Education" ]   %>
     <%= f.input :description %>
     <%= f.input :question %>
-    <%= f.input :interests %>
+    <%= f.input :interests%>
     <%= f.input :location %>
-    <%= f.input :langitude %>
-    <%= f.input :latitude %>
   </div>
 
   <div class="form-actions">
     <%= f.button :submit %>
   </div>
 <% end %>
+</div>
