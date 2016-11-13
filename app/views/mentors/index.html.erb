@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="https://js.cit.api.here.com/v3/3.0/mapsjs-ui.css" />
+<link rel="stylesheet" type="text/css" href="https://js.cit.api.here.com/v3/3.0/mapsjs-ui.css"/>
 <script type="text/javascript" src="https://js.cit.api.here.com/v3/3.0/mapsjs-core.js"></script>
 <script type="text/javascript" src="https://js.cit.api.here.com/v3/3.0/mapsjs-service.js"></script>
 <script type="text/javascript" src="https://js.cit.api.here.com/v3/3.0/mapsjs-ui.js"></script>
@@ -8,88 +8,78 @@
 
 <h1>Today's Mentors</h1>
 <h2>Undecided will be refreshed tomorrow!</h2>
-    <% end %>
-  <div id="map" style="width: 100%; height: 400px; background: grey" />
+<div id="map" style="width: 100%; height: 400px; background: grey"/>
 
-  <script  type="text/javascript" charset="UTF-8" >
+<script type="text/javascript" charset="UTF-8">
 
-/**
+    /**
  * Creates a new marker and adds it to a group
  * @param {H.map.Group} group       The group holding the new marker
  * @param {H.geo.Point} coordinate  The location of the marker
  * @param {String} html             Data associated with the marker
  */
-function addMarkerToGroup(group, coordinate, html) {
-  var marker = new H.map.Marker(coordinate);
-  // add custom data to the marker
-  marker.setData(html);
-  group.addObject(marker);
-}
+    function addMarkerToGroup(group, coordinate, html) {
+        var marker = new H.map.Marker(coordinate);
+        // add custom data to the marker
+        marker.setData(html);
+        group.addObject(marker);
+    }
 
-/**
+    /**
  * Add two markers showing the position of Liverpool and Manchester City football clubs.
  * Clicking on a marker opens an infobubble which holds HTML content related to the marker.
  * @param  {H.Map} map      A HERE Map instance within the application
  */
-function addInfoBubble(map) {
-  var group = new H.map.Group();
+    function addInfoBubble(map) {
+        var group = new H.map.Group();
 
-  map.addObject(group);
+        map.addObject(group);
 
-  // add 'tap' event listener, that opens info bubble, to the group
-  group.addEventListener('tap', function (evt) {
-    // event target is the marker itself, group is a parent event target
-    // for all objects that it contains
-    var bubble =  new H.ui.InfoBubble(evt.target.getPosition(), {
-      // read custom data
-      content: evt.target.getData()
-    });
-    // show info bubble
-    ui.addBubble(bubble);
-  }, false);
+        // add 'tap' event listener, that opens info bubble, to the group
+        group.addEventListener('tap', function (evt) {
+            // event target is the marker itself, group is a parent event target for all objects that it contains
+            var bubble = new H.ui.InfoBubble(evt.target.getPosition(), {
+                // read custom data
+                content: evt.target.getData()
+            });
+            // show info bubble
+            ui.addBubble(bubble);
+        }, false);
 
+        <% if @mentors.present? %>
+        <%  @mentors.each do |mentor| %>
+        addMarkerToGroup(group, {
+            lat: <%= mentor.latitude %>,
+            lng: <%= mentor.longitude %>
+        }, '<div class=\'.col-sm-2\'><a href=\'mentors/<%= mentor.id %>\' ><%= Mentor.name %></a></div><div ><%= mentor.mentor_type %><br><img class=\'img-rounded image-map \' src=\'<%= mentor.image %>\'><p><%= mentor.description %></p></div>');
+        <% end %>
+        <% end %>
 
-  <% if @mentors.present? %>
-  <%  @mentors.each do |mentor| %>
-  addMarkerToGroup(group, {lat:<%= mentor.latitude %>, lng:<%= mentor.longitude %>},
-    '<div class=\'.col-sm-2\'><a href=\'mentors/<%= mentor.id %>\' ><%= Mentor.name %></a>' +
-    '</div><div ><%= mentor.mentor_type %><br><img class=\'img-rounded image-map \' src=\'<%= mentor.image %>\'><p><%= mentor.description %></p></div>');
-  <% end %>
-  <% end %>
+    }
 
-
-}
-
-
-
-/**
+    /**
  * Boilerplate map initialization code starts below:
  */
 
-// initialize communication with the platform
-var platform = new H.service.Platform({
-  app_id: 'DemoAppId01082013GAL',
-  app_code: 'AJKnXv84fjrb0KIHawS0Tg',
-  useCIT: true,
-  useHTTPS: true
-});
-var defaultLayers = platform.createDefaultLayers();
+    // initialize communication with the platform
+    var platform = new H.service.Platform({app_id: 'DemoAppId01082013GAL', app_code: 'AJKnXv84fjrb0KIHawS0Tg', useCIT: true, useHTTPS: true});
+    var defaultLayers = platform.createDefaultLayers();
 
-// initialize a map - this map is centered over Europe
-var map = new H.Map(document.getElementById('map'),
-  defaultLayers.normal.map,{
-  center: {lat: 49.259219, lng: -123.130777},
-  zoom: 7
-});
+    // initialize a map - this map is centered over Europe
+    var map = new H.Map(document.getElementById('map'), defaultLayers.normal.map, {
+        center: {
+            lat: 49.259219,
+            lng: -123.130777
+        },
+        zoom: 7
+    });
 
+    // MapEvents enables the event system Behavior implements default interactions for pan/zoom (also on mobile touch environments)
+    var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
 
-// MapEvents enables the event system
-// Behavior implements default interactions for pan/zoom (also on mobile touch environments)
-var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
+    // create default UI with layers provided by the platform
+    var ui = H.ui.UI.createDefault(map, defaultLayers);
 
-// create default UI with layers provided by the platform
-var ui = H.ui.UI.createDefault(map, defaultLayers);
-
-// Now use the map as required...
-addInfoBubble(map);
-  </script>
+    // Now use the map as required...
+    addInfoBubble(map);
+</script>
