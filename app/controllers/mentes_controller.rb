@@ -69,6 +69,6 @@ class MentesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def mente_params
-      params.require(:mente).permit(:image, :email, :name, :age, :mentor_type, :description, :question, :interests, :location, :langitude, :latitude)
+      params.require(:mente).permit(:image, :email, :name, :age, :mentor_type, :description, :question, :interests, :location, :longitude, :latitude)
     end
 end

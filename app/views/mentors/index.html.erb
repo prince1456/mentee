@@ -23,8 +23,7 @@
   <tbody>
     <% @mentors.each do |mentor| %>
       <tr>
-        <td><%= mentor.image %></td>
-        <td><%= mentor.email %></td>
+        <td><%= image_tag mentor.image %></td>
         <td><%= mentor.name %></td>
         <td><%= mentor.age %></td>
         <td><%= mentor.mentor_type %></td>

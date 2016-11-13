@@ -3,6 +3,6 @@ class HomeController < ApplicationController
 
   end
   def map
-
+    @mentors = Mentor.all
   end
 end
