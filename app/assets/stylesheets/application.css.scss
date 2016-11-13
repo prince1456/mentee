@@ -13,7 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
-@import "font-awesome";
+.image-map{
+width: 250px 
+}
