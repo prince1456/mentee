@@ -5,4 +5,7 @@ class HomeController < ApplicationController
   def map
     @mentors = Mentor.all
   end
+  def likess
+
+  end
 end

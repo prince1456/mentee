@@ -1,60 +1,40 @@
+
 <p id="notice"><%= notice %></p>
-<div class="container-fluid">
+<div class="container-fluid mentor-list-page" align="center">
   <dir class="col-xs-12">
   <p>
-    <%= image_tag @mentor.image, class: "img-responsive " %>
+    <%= image_tag @mentor.image, class: "img-responsive mentor-list-image" %>
   </p>
-</dir>
-  <p>
-    <strong>Email:</strong>
-    <%= @mentor.email %>
-  </p>
+  </dir>
+  <div class="col-xs-12">
+    <p class="mentor-personal-info">
+      <%= @mentor.name %> <%= @mentor.age %>
+    </p>
+  </div>
+  <div class="col-xs-12">
+    <p style="color: #fff; text-align: left">
+      <%= @mentor.location %>
+    </p>
+  </div>
+  <div class="col-xs-3">
+    <p class="mentor-tag-info">
+      <%= @mentor.interests %>
+    </p>
+  </div>
+  <div class="col-xs-12">
+    <p class="info p-info">
+      <%= @mentor.description %>
+    </p>
+  </div>
 
-  <p>
-    <strong>Name:</strong>
-    <%= @mentor.name %>
-  </p>
 
-  <p>
-    <strong>Age:</strong>
-    <%= @mentor.age %>
-  </p>
+  <div class="col-xs-12" align="left">
+      <span><%= link_to "unlike", likess_path, class: "imggg btn btn-danger btn-lg" %></span>
+      <div> <span><%= link_to "like", likess_path, class: "imggg btn btn-info btn-lg" %></span>
+    </div>
+    <br>
+    <%= link_to 'Back', mentors_path %>
 
-  <p>
-    <strong>Mentor type:</strong>
-    <%= @mentor.mentor_type %>
-  </p>
+    </div>
 
-  <p>
-    <strong>Description:</strong>
-    <%= @mentor.description %>
-  </p>
-
-  <p>
-    <strong>Question:</strong>
-    <%= @mentor.question %>
-  </p>
-
-  <p>
-    <strong>Interests:</strong>
-    <%= @mentor.interests %>
-  </p>
-
-  <p>
-    <strong>Location:</strong>
-    <%= @mentor.location %>
-  </p>
-
-  <p>
-    <strong>Langitude:</strong>
-    <%= @mentor.langitude %>
-  </p>
-
-  <p>
-    <strong>Latitude:</strong>
-    <%= @mentor.latitude %>
-  </p>
-
-  <%= link_to 'Edit', edit_mentor_path(@mentor) %> |
-  <%= link_to 'Back', mentors_path %>
 </div>

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :mentors
   root "home#index"
   get "/maps" => "home#maps"
+  get "/likess" => "home#likess"
 
   resources :mentors do
     resources :likes, only: [:create, :destroy]

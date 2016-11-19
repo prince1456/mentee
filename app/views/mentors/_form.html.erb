@@ -1,19 +1,18 @@
 <%= simple_form_for(@mentor) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :image %>
-    <%= f.input :email %>
-    <%= f.input :name %>
-    <%= f.input :age, collection: 15..35, prompt: "Select your age", selected: 15%>
-    <%= f.input :mentor_type, collection: [ "Life Coach", "Career Couch", "Entrepreneurship","Parenthood and Marriage", "Education" ],selected: ["Education"]   %>
-    <%= f.input :description %>
-    <%= f.input :question %>
-    <%= f.input :interests %>
-    <%= f.input :location %>
-  </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+    <div class="form-inputs">
+      <%= f.input :image %>
+      <%= f.input :email, placeholder:"awong@smthing.com" %>
+      <%= f.input :name, placeholder:"Amanda Wong" %>
+      <%= f.input :age, collection: 15..35, prompt: "Select your age", selected: 15%>
+      <%= f.input :mentor_type, priority: "Education", collection: [ "Life Coach", "Career Couch", "Entrepreneurship","Parenthood and Marriage", "Education" ], selected:"Life Coach"  %>
+      <%= f.input :description, label:"Bio", placeholder:"Tell us about yourself" %>
+      <%= f.input :question, label:"What do you hope to get out of the program?", placeholder:"Answer..." %>
+      <%= f.input :interests, label:"What are your interests?", placeholder:"Answer..."%>
+      <%= f.input :location, placeholder:"Vancouver, BC" %>
+      <%= f.input :password %>
+      <%= f.button :submit, class:"submit-btn" %>
+    </div>
+  <% end %>

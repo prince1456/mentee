@@ -86,14 +86,11 @@
         }, false);
 
         <% if @mentors.present? %>
-        <%  @mentors.each do |mentor| %>
-        addMarkerToGroup(group, {
-            lat: <%= mentor.latitude %>,
-            lng: <%= mentor.longitude %>
-        }, '<div class=\'.col-sm-2\'><a href=\'mentors/<%= mentor.id %>\' ><%= Mentor.name %></a></div><div ><%= mentor.mentor_type %><br><img class=\'img-rounded image-map \' src=\'<%= mentor.image %>\'><p><%= mentor.description %></p></div>');
-        <% end %>
-        <% end %>
-
+  <%  @mentors.each do |mentor| %>
+      addMarkerToGroup(group, {lat:<%= mentor.latitude %>, lng:<%= mentor.longitude %>},
+    '<div style=\'width: 150px; height: 50px;\'> <center><a  href=\'mentors\<%= mentor.id %>\'><%= mentor.name %></center></div>');
+   <% end %>
+  <% end %>
     }
 
     /**
@@ -110,7 +107,7 @@
             lat: 49.259219,
             lng: -123.130777
         },
-        zoom: 7
+        zoom: 14
     });
 
     // MapEvents enables the event system Behavior implements default interactions for pan/zoom (also on mobile touch environments)

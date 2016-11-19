@@ -1,6 +1,6 @@
 class MentorsController < ApplicationController
   before_action :set_mentor, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:index, :show]
+  # before_action :authenticate_user!, except: [:index, :show]
   # GET /mentors
   # GET /mentors.json
   def index
@@ -10,7 +10,7 @@ class MentorsController < ApplicationController
   # GET /mentors/1
   # GET /mentors/1.json
   def show
-    @like = @mentor.like_for(current_user)
+    # @like = @mentor.like_for(current_user)
   end
 
   # GET /mentors/new
